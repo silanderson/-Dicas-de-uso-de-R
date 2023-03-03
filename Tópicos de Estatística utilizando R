@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>&#x1F680; From Kaggle to Prod using Truss &#x2B; PyTorch</title>
+  <meta charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+  <meta name="description" content="Explore and run machine learning code with Kaggle Notebooks | Using data from No attached data sources" />
+  <meta name="turbolinks-cache-control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="theme-color" content="#008ABC" />
+  <script nonce="zRyvs2Yn3fISrGPRO39h2A==" type="text/javascript">
+    window["pageRequestStartTime"] = 1677871329924;
+    window["pageRequestEndTime"] = 1677871330122;
+    window["initialPageLoadStartTime"] = new Date().getTime();
+  </script>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" /><link rel="preconnect" href="https://stats.g.doubleclick.net" /><link rel="preconnect" href="https://storage.googleapis.com" /><link rel="preconnect" href="https://apis.google.com" />
+  <link href="/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="manifest" href="/static/json/manifest.json" crossorigin="use-credentials">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/icon?family=Google+Material+Icons"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/icon?family=Google+Material+Icons"
+    rel="stylesheet" media="print" id="async-google-font-1" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" media="print" id="async-google-font-2" />
+  <script nonce="zRyvs2Yn3fISrGPRO39h2A==" type="text/javascript">
+    const styleSheetIds = ["async-google-font-1", "async-google-font-2"];
+    styleSheetIds.forEach(function (id) {
+      document.getElementById(id).addEventListener("load", function() {
+        this.media = "all";
+      });
+    });
+  </script>
+
+    <link rel="canonical" href="/code/jessemostipak/from-kaggle-to-prod-using-truss-pytorch" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/vendor.css?v=e4c7092a1deb800ab1ec" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=cd8745ef71013c8e17ff" />
+  
+    
+ 
+      <script nonce="zRyvs2Yn3fISrGPRO39h2A==">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script>
+    <script nonce="zRyvs2Yn3fISrGPRO39h2A==">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-12629138-1', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false,
+            'content_group1': 'Notebooks'
+        });
+    </script>
+    <script nonce="zRyvs2Yn3fISrGPRO39h2A==" async src="https://www.googletagmanager.com/gtag/js?id=UA-12629138-1"></script>
+
+  
+    
+    <meta name="og:url" content="https://kaggle.com/code/jessemostipak/from-kaggle-to-prod-using-truss-pytorch" />
+    <meta property="og:title" content="&#x1F680; From Kaggle to Prod using Truss &#x2B; PyTorch" />
+    <meta property="og:description" content="Explore and run machine learning code with Kaggle Notebooks | Using data from No attached data sources" />
+    <meta property="og:type" content="website" />
+    <meta name="og:image" content="https://storage.googleapis.com/kaggle-avatars/thumbnails/4476084-kg.jpg" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kaggledatasets" />
+
+
+  <meta name="twitter:site" content="@Kaggle" /> 
+  
+    
+    <script nonce="zRyvs2Yn3fISrGPRO39h2A==" type="application/ld+json">{"@context":"http://schema.org/","@type":"Article","author":{"@type":"Person","name":"jessemostipak","sameAs":"/jessemostipak"},"headline":"🚀 From Kaggle to Prod using Truss + PyTorch","url":"https://www.kaggle.com/code/jessemostipak/from-kaggle-to-prod-using-truss-pytorch","dateModified":"2022-09-21T21:05:31.0533333Z","datePublished":"2022-09-21T21:05:31.0533333Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.kaggle.com/code/jessemostipak/from-kaggle-to-prod-using-truss-pytorch"},"publisher":{"@type":"Organization","name":"Kaggle","sameAs":"https://www.kaggle.com","logo":{"type":"ImageObject","url":"https://www.kaggle.com/static/images/site-logo.png"}},"image":["https://storage.googleapis.com/kaggle-avatars/thumbnails/4476084-kg.jpg"]}</script>
+
+
+  
+    
+        <link rel="alternate" type="application/json+oembed"
+          href="https://www.kaggle.com/oembed/kernel?url=https%3A%2F%2Fwww.kaggle.com%2Fcode%2Fjessemostipak%2Ffrom-kaggle-to-prod-using-truss-pytorch%3FscriptVersionId%3D106749497"
+          title="&#x1F680; From Kaggle to Prod using Truss &#x2B; PyTorch" />
+
+
+  
+    
+
+
+    <script nonce="zRyvs2Yn3fISrGPRO39h2A==">window['useKaggleAnalytics'] = true;</script>
+
+  <script id="gapi-target" nonce="zRyvs2Yn3fISrGPRO39h2A==" src="https://apis.google.com/js/api.js" defer
+    async></script>
+  <script nonce="zRyvs2Yn3fISrGPRO39h2A==" src="/static/assets/runtime.js?v=24b518869e418b3b5d84" data-turbolinks-track="reload"></script>
+  <script nonce="zRyvs2Yn3fISrGPRO39h2A==" src="/static/assets/vendor.js?v=69eaf222fa5b8c1ae104" data-turbolinks-track="reload"></script>
+  <script nonce="zRyvs2Yn3fISrGPRO39h2A==" src="/static/assets/app.js?v=2e07d60abe485648398c" data-turbolinks-track="reload"></script>
+    <script nonce="zRyvs2Yn3fISrGPRO39h2A==" type="text/javascript">
+      window.kaggleStackdriverConfig = {
+        key: 'AIzaSyA4eNqUdRRskJsCZWVz-qL655Xa5JEMreE',
+        projectId: 'kaggle-161607',
+        service: 'web-fe',
+        version: 'ci',
+        userId: '0'
+      }
+    </script>
+</head>
+
+<body data-turbolinks="false">
+  <main>
+    
+
+
+
+
+
+<div id="site-container"></div>
+
+<div id="site-body" class="hide">
+    
+
+
+
+
+<div data-component-name="KernelViewerMaterialContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="zRyvs2Yn3fISrGPRO39h2A==">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"kernel":{"id":30593266,"title":"\uD83D\uDE80 From Kaggle to Prod using Truss \u002B PyTorch","currentRunId":106231535,"mostRecentRunId":106749497,"url":"/code/jessemostipak/from-kaggle-to-prod-using-truss-pytorch","upvoteCount":7,"viewCount":462,"forkCount":4,"author":{"id":4476084,"displayName":"Jesse Mostipak","userName":"jessemostipak","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/4476084-kg.jpg","profileUrl":"/jessemostipak","performanceTier":"EXPERT"},"updatedTime":"2022-09-21T21:05:31.053333300Z","selfLink":"/kernels/30593266","dockerImagePinningType":"DOCKER_IMAGE_PINNING_TYPE_ORIGINAL","originalDockerImageId":30260,"medal":"BRONZE","slug":"from-kaggle-to-prod-using-truss-pytorch","pinnedSessionId":106749497,"canToggleVisibility":true},"kernelRun":{"id":106749497,"kernelId":30593266,"status":"ERROR","kernelVersionType":"BATCH","sourceType":"EDITOR_TYPE_NOTEBOOK","language":"LANGUAGE_PYTHON","title":"\uD83D\uDE80 From Kaggle to Prod using Truss \u002B PyTorch","dateCreated":"2022-09-28T16:04:06.943Z","dateEvaluated":"2022-09-28T16:04:09.913Z","workerUptimeSeconds":527,"workerIpAddress":"172.23.1.68    ","workerIpAddressExternal":"35.204.232.215 ","scriptLanguageId":9,"scriptLanguageName":"IPython Notebook HTML","renderedOutputUrl":"https://www.kaggleusercontent.com/kf/106749497/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..tt2jeHVtGIqnigUvjcgK7w.VWtmA7l3pL6CeCKhclP3F3Rn-DGpQu2ZZ7ekhatdlypSt31cVcqpRdrnO-ea8kZsp90kPwTkfTCwCJ5Fq3y2p4JJC80p5BgQJ_RPdzq9q3xYOGYz-xD6wjVoDaKwwsZJDYzm2LcQ_xW0zY3vHj-J-PXyB31IHt8_FsjztekxdEd9ubL8Kimv2tIlpUMiJYILhfaIDSqcwHhOPF_v8_S6vlmcU7EZVAqOJQlhqAWyBwKVHiS8Kje3JeIPlPvUU_08yl-Y8HFiEqNAb6J_YRU_X_pRUkujXljeiDKSguOQaYaEIdvcBVuRt6lASqAKN5iqmJKRHFm19VIKEB-GYc63q4UWPJpX_7kkN-TOUhwgFQIPGAvtG_nJBlDC9WzmkKE-kfqUbSFk_TqHqDWfqd96FZxGG5mY2FGUGcIpTjt2dEJn-COE278Huwo_RmyuFUHgHU93LouBa8mwpS1svTDLivXlMojJD4iuJ4WVTF2QFpSKhtcyA9U_CUmUi6ubcstmiwiREL8bMGvg193spXmoai5I7rU4nTOasXJPRcRpWEiJzvTl2cNsekgvItHpOQB9y5ymX52TNgmqOd0gS6Whz3Lx_-sjbt6narNfS198-coKdMi0Niv4a2U4tJkj4Kt4d90H3pKSFOclaxovtkx3o9rW8nw3hI2Ck01jGZ1xpreI88s83dtPEhR3UivjHxT8.7CNXndTr4RrVg6Kr-bawsA/__results__.html?sharingControls=true","isolatorResults":"\u003Cresults\u003E\u003Cdockerfile_url\u003Egcr.io/kaggle-private-byod/python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba\u003C/dockerfile_url\u003E\u003Cdocker_image_digest\u003E554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba\u003C/docker_image_digest\u003E\u003Cdocker_image_id\u003Esha256:e21d8560582d9ea0981d85f2f54213b2a9ce1b599cf5804ba9eeb18e04825103\u003C/docker_image_id\u003E\u003Cdocker_image_name\u003Egcr.io/kaggle-private-byod/python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba\u003C/docker_image_name\u003E\u003Cfailure_message /\u003E\u003Cexit_code\u003E1\u003C/exit_code\u003E\u003Coutput_size_bytes\u003E1932\u003C/output_size_bytes\u003E\u003Crun_time_seconds\u003E160.2356334\u003C/run_time_seconds\u003E\u003Cused_all_space\u003Efalse\u003C/used_all_space\u003E\u003Ctimeout_exceeded\u003Efalse\u003C/timeout_exceeded\u003E\u003Cout_of_memory\u003Efalse\u003C/out_of_memory\u003E\u003Cinvalid_path_errors\u003Efalse\u003C/invalid_path_errors\u003E\u003Csucceeded\u003Efalse\u003C/succeeded\u003E\u003Cwas_killed\u003Efalse\u003C/was_killed\u003E\u003C/results\u003E","runInfo":{"dockerfileUrl":"https://github.com/Kaggle/docker-python/blob/main/Dockerfile.tmpl","dockerHubUrl":"https://gcr.io/kaggle-gpu-images/python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba","dockerImageDigest":"554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba","dockerImageId":"sha256:e21d8560582d9ea0981d85f2f54213b2a9ce1b599cf5804ba9eeb18e04825103","dockerImageName":"gcr.io/kaggle-gpu-images/python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba","failureMessage":"","exitCode":1,"outputSizeBytes":1932,"runTimeSeconds":160.2356334},"dockerImageVersionId":30262,"useNewKernelsBackend":true,"isGpuEnabled":true,"acceleratorType":"GPU","isInternetEnabled":true,"authorUserId":4476084},"author":{"id":4476084,"displayName":"Jesse Mostipak","userName":"jessemostipak","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/4476084-kg.jpg","profileUrl":"/jessemostipak","performanceTier":"EXPERT"},"baseUrl":"/code/jessemostipak/from-kaggle-to-prod-using-truss-pytorch","collaborators":{"owner":{"userId":4476084,"profileUrl":"/jessemostipak","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/4476084-kg.jpg","name":"Jesse Mostipak","slug":"jessemostipak","userTier":"EXPERT","type":"OWNER"}},"initialTab":"","outputFiles":[{"kernelSessionId":106749497,"kernelId":30593266,"name":"model.cpython-37.pyc","contentLength":1146,"fullPath":"__pycache__/model.cpython-37.pyc","downloadUrl":"https://www.kaggleusercontent.com/kf/106749497/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..7dM4Xgfef08ZQufgnFnTqw.Je_tJmo0Og7rj-cyMivp9bIg8QMw04CpmGFxD0bGD0Wep_JTxVv0DhIGLzOBwV_uc56MI0iwh4LYtKbo43zpqs_kpQMJlLYk2lCyAQpzvv49SrsGjcoj92L_PzpSeXv73WhziM52KcNaYg7KDbuS2EaAlmiKVlJaqfxJ_yV4oFWG6pjpoZDJcavBmQILSIF-gKkKZMYe3KvUWs7voYP06FmQIY0iUGosWlT2El8espE-mVXccj_JTNSzOTaFzCPrn821IZtlbTMOVc1Tl1Xa7AzvhMkiySftl3-7aBuErvxiF12WgjagZHX4Dt0e61YJLgFbvRBm9-kgO9VSmWNaoJKKOx080aiO3lxud2KavVGyG6P5s917vAmcrnMMdT8JdvMuAuSb1fpvbJazpWMOIbO-QDxWuaOzG6fee4psNyLPgWI93Bqzt-dxGe8nuuCXPRM6w0o02O8T0MpEF8JJLaj3vJreLY2mMlael1HJCZpCWz7ATapcBHtoY9Qf5wubUjtZ0BITJg0OQZBOJVtmmIulMMqqIdRCVdrIMSsSuIqUwxkj9GRBNaXNykCYdi3J-vO2EjrNxdrxbPoUm_cigeOrb7AdUmi2XnSdEDbuRHnwH0EA1bnccPprSxGrX1wQ8b_Ympj9cs539h88CJBjUJsJrxz9gDezRHtKF6P2pNsBOk1XBK3zJpMzqssseMhj.f2qFd8axq6c4Ui5gIGwmHw/__pycache__/model.cpython-37.pyc","fileType":".pyc"},{"kernelSessionId":106749497,"kernelId":30593266,"name":"model.py","contentLength":786,"fullPath":"model.py","downloadUrl":"https://www.kaggleusercontent.com/kf/106749497/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..8AQ3nZkgucHIx3sXFk2fIg.P2EZkms-qLuwZbA8CMhunU8q7HqqJ9W7coBNBgYNahxmh-BUFNDM2mM2-WMXcobbryzh2Jy3E7zN5_cx90wmvI1XFlJQkkYBYLhnWyvYpHWRwdZDYBCaArVbLALUlXutG89pIZSTA6A85jZd0bb9behKxsFaWvSE-9LK8z78zo1W3s2UmuH5Ete5REWLYq13D-B4QWxj0ppoQrn6gf9kBzZ8NzhC_VJDAA2FxnaPmnmcjlsN1_y_x0jtmf2qcUWme01ZGsVPFxHwW6cLj9b8-K68ulVeomkazmZz17vCD0AX8dKzNdtPO6VyQfY3OLjU2EmurIYOCExlk-I5KDyIG5KZ7SdqR11ZYPvBUHUDj-p9ajuKH41gS42JlBGhcV9-_waGhlnFoMonUmR4GNRzTPiD9s9XU1qfQV0Hr1sDdxANsU41uRfl8SwVAWqBQjkzptaoTnhmq5JXjWLPN5CUtbkmvPW1Z-g73hskrWHzbDX-IElLX_U6pMXN_6rXjwM_JfA_LiJ3Jq7wTiYgSRlg-gOr3EnjXn_Y8co16mQyDaFNk8o7mgClaVavo4Yzo1Ujpbo5rqCVjeQPe_nSs83_HKukHpJ5WSZkfMsMI5j_ALWnvZIHfWd89vLmoPcCks263MNNSmN7T0oTOraEG4jZljdF7vbVQDhZrx1qq5W0n9GBmP6WtPe-d-lAorthD6J8.BZ4zZumZueO-6uEjFTVXLg/model.py","fileType":".py"}],"ouputFilesOwnerInfo":{"kernel":{"kernelId":30593266,"kernelVersionId":106749497,"scope":"jessemostipak/from-kaggle-to-prod-using-truss-pytorch"}},"renderableDataSources":[{"name":"No attached data sources","dataSourceUrl":"/kaggle/no-data-sources","thumbnailUrl":"/static/images/no-datasource.png"}],"versions":[{"id":106749497,"isNotebook":true,"languageName":"Python","lastRunTime":"2022-09-28T16:04:06.943Z","runInfo":{"dockerfileUrl":"https://github.com/Kaggle/docker-python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba/blob/master/Dockerfile","dockerHubUrl":"https://registry.hub.docker.com/u/kaggle/python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba/","dockerImageId":"sha256:e21d8560582d9ea0981d85f2f54213b2a9ce1b599cf5804ba9eeb18e04825103","dockerImageName":"gcr.io/kaggle-private-byod/python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba","exitCode":1,"failureMessage":"","isValidStatus":true,"runTimeSeconds":160.2356334,"usedAllSpace":false},"status":"ERROR","title":"\uD83D\uDE80 From Kaggle to Prod using Truss \u002B PyTorch","url":"/jessemostipak/from-kaggle-to-prod-using-truss-pytorch?scriptVersionId=106749497","versionNumber":5,"hasVersionNumber":true,"versionType":"BATCH"},{"id":106749292,"isNotebook":true,"languageName":"Python","lastRunTime":"2022-09-28T16:00:48.980Z","linesDeletedFromPrevious":2,"runInfo":{"dockerfileUrl":"https://github.com/Kaggle/docker-python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba/blob/master/Dockerfile","dockerHubUrl":"https://registry.hub.docker.com/u/kaggle/python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba/","dockerImageId":"sha256:e21d8560582d9ea0981d85f2f54213b2a9ce1b599cf5804ba9eeb18e04825103","dockerImageName":"gcr.io/kaggle-private-byod/python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba","exitCode":1,"failureMessage":"","isValidStatus":true,"runTimeSeconds":160.7201678,"usedAllSpace":false},"status":"ERROR","title":"\uD83D\uDE80 From Kaggle to Production using Truss \u002B PyTor","url":"/jessemostipak/from-kaggle-to-prod-using-truss-pytorch?scriptVersionId=106749292","versionNumber":4,"hasVersionNumber":true,"versionType":"BATCH"},{"id":106748963,"isNotebook":true,"languageName":"Python","lastRunTime":"2022-09-28T15:56:38.927Z","runInfo":{"dockerfileUrl":"https://github.com/Kaggle/docker-python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba/blob/master/Dockerfile","dockerHubUrl":"https://registry.hub.docker.com/u/kaggle/python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba/","dockerImageId":"sha256:e21d8560582d9ea0981d85f2f54213b2a9ce1b599cf5804ba9eeb18e04825103","dockerImageName":"gcr.io/kaggle-private-byod/python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba","exitCode":1,"failureMessage":"","isValidStatus":true,"runTimeSeconds":159.0435742,"usedAllSpace":false},"status":"ERROR","title":"Truss \u002B PyTorch == \uD83D\uDD25","url":"/jessemostipak/from-kaggle-to-prod-using-truss-pytorch?scriptVersionId=106748963","versionNumber":3,"hasVersionNumber":true,"versionType":"BATCH"},{"id":106748339,"isNotebook":true,"languageName":"Python","lastRunTime":"2022-09-28T15:48:09.917Z","linesDeletedFromPrevious":1,"linesInsertedFromPrevious":42,"runInfo":{"dockerfileUrl":"https://github.com/Kaggle/docker-python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba/blob/master/Dockerfile","dockerHubUrl":"https://registry.hub.docker.com/u/kaggle/python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba/","dockerImageId":"sha256:e21d8560582d9ea0981d85f2f54213b2a9ce1b599cf5804ba9eeb18e04825103","dockerImageName":"gcr.io/kaggle-private-byod/python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba","exitCode":1,"failureMessage":"","isValidStatus":true,"runTimeSeconds":159.9419063,"usedAllSpace":false},"status":"ERROR","title":"Truss \u002B PyTorch == \uD83D\uDD25","url":"/jessemostipak/from-kaggle-to-prod-using-truss-pytorch?scriptVersionId=106748339","versionNumber":2,"hasVersionNumber":true,"versionType":"BATCH"},{"id":106231535,"isNotebook":true,"languageName":"Python","lastRunTime":"2022-09-21T21:05:29.080Z","linesInsertedFromPrevious":128,"runInfo":{"dockerfileUrl":"https://github.com/Kaggle/docker-python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba/blob/master/Dockerfile","dockerHubUrl":"https://registry.hub.docker.com/u/kaggle/python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba/","dockerImageId":"sha256:e21d8560582d9ea0981d85f2f54213b2a9ce1b599cf5804ba9eeb18e04825103","dockerImageName":"gcr.io/kaggle-private-byod/python@sha256:554628d62759e213d19b5d2e992b57e0d5c428d1648fe3004cb5d0bd590109ba","isValidStatus":true,"runTimeSeconds":195.8616909,"succeeded":true,"usedAllSpace":false},"status":"COMPLETE","title":"Truss \u002B PyTorch == \uD83D\uDD25","url":"/jessemostipak/from-kaggle-to-prod-using-truss-pytorch?scriptVersionId=106231535","versionNumber":1,"hasVersionNumber":true,"versionType":"BATCH"}],"downloadAllFilesUrl":"/code/svzip/106749497","menuLinks":[{"href":"/code/jessemostipak/from-kaggle-to-prod-using-truss-pytorch/code","tab":"code","text":"Code","title":"Code"},{"href":"/code/jessemostipak/from-kaggle-to-prod-using-truss-pytorch/notebook","tab":"notebook","text":"Notebook","title":"Notebook"},{"href":"/code/jessemostipak/from-kaggle-to-prod-using-truss-pytorch/execution","showOnMobile":false,"tab":"execution","text":"Execution Info","title":"Execution Info"},{"href":"/code/jessemostipak/from-kaggle-to-prod-using-truss-pytorch/log","showOnMobile":false,"tab":"log","text":"Log","title":"Log"},{"count":0,"href":"/code/jessemostipak/from-kaggle-to-prod-using-truss-pytorch/data","tab":"data","text":"Input","title":"Input"},{"href":"/code/jessemostipak/from-kaggle-to-prod-using-truss-pytorch/output","showOnMobile":false,"tab":"output","text":"Output","title":"Output"},{"count":0,"href":"/code/jessemostipak/from-kaggle-to-prod-using-truss-pytorch/comments","showZeroCountExplicitly":true,"tab":"comments","text":"Comments","title":"Comments"}],"callToAction":{"href":"/code/fork-version/106749497","reportEventCategory":"kernels","reportEventType":"anonymousKernelForkCreation","text":"Fork Notebook","title":"Fork Notebook"},"voteButton":{"totalVotes":7,"medalVotes":6,"canUpvote":true,"voters":[{"id":115173,"displayName":"Phil Culliton","userName":"philculliton","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/115173-fb.jpg","profileUrl":"/philculliton","performanceTier":"STAFF"},{"id":4476084,"displayName":"Jesse Mostipak","userName":"jessemostipak","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/4476084-kg.jpg","profileUrl":"/jessemostipak","performanceTier":"EXPERT"},{"id":6097832,"displayName":"Andrey Shtrauss","userName":"shtrausslearning","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/6097832-kg.jpeg","profileUrl":"/shtrausslearning","performanceTier":"GRANDMASTER"},{"id":6279218,"displayName":"Ram Jas","userName":"ramjasmaurya","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/6279218-kg.jpg","profileUrl":"/ramjasmaurya","performanceTier":"GRANDMASTER"},{"id":7547450,"displayName":"Alex","userName":"alexandrepetit881234","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/7547450-kg.jpg","profileUrl":"/alexandrepetit881234","performanceTier":"EXPERT"},{"id":8524823,"displayName":"Sanphat Sangudsup","userName":"sanphats","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/8524823-kg.png","profileUrl":"/sanphats","performanceTier":"EXPERT"},{"id":10764990,"displayName":"Sandeep Bansode","userName":"bansodesandeep","thumbnailUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/10764990-kg.jpg","profileUrl":"/bansodesandeep","performanceTier":"GRANDMASTER"}],"showVoters":true,"alwaysShowVoters":true,"kernelId":30593266},"showSharingControls":true,"moderationStatus":"PRIVATED_MODERATION_STATUS_NO_ABUSE"});performance && performance.mark && performance.mark("KernelViewerMaterialContainer.componentCouldBootstrap");</script>
+
+<form action="/code/jessemostipak/from-kaggle-to-prod-using-truss-pytorch" id="__AjaxAntiForgeryForm" method="post"><input name="X-XSRF-TOKEN" type="hidden" value="CfDJ8BZi3DxbL8VNuAHGWfYaq6ojOGhYbwhw8HEpR7xPQz13H1i2DqO8IQqY5Kl7oGEWp-mjnOFhoEDk6aSTRJk74Ul6k0YKrT9CwRVRsA08tuNvqw" /></form>
+<script nonce="zRyvs2Yn3fISrGPRO39h2A==" type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+    preferredFont: "TeX",
+    availableFonts: ["STIX", "TeX"],
+    linebreaks: {
+    automatic: true
+    },
+    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+    inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+    displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+    processEscapes: true,
+    ignoreClass: "tex2jax_ignore|dno"
+    },
+    TeX: {
+    noUndefined: {
+    attributes: {
+    mathcolor: "red",
+    mathbackground: "#FFEEEE",
+    mathsize: "90%"
+    }
+    }
+    },
+    Macros: {
+    href: "{}"
+    },
+    skipStartupTypeset: true,
+    messageStyle: "none",
+    extensions: ["Safe.js"],
+    });
+</script>
+<script type="text/javascript" nonce="zRyvs2Yn3fISrGPRO39h2A==">
+  window.addEventListener("DOMContentLoaded", () => {
+    const head = document.getElementsByTagName("head")[0];
+    const useProdHosts = ["www.kaggle.com", "admin.kaggle.com"];
+    const subdomain = useProdHosts.includes(window.location.hostname) ? "www" : "staging";
+
+    const lib = document.createElement("script");
+    lib.type = "text/javascript";
+    lib.src = `https://${subdomain}.kaggleusercontent.com/static/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML`;
+    head.appendChild(lib);
+  });
+</script>
+
+
+</div>
+
+
+
+
+  </main>
+</body>
+
+</html>
+
+
